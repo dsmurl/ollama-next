@@ -2,6 +2,7 @@
 
 ### To operate teh background ollama server
 
+- install the ollama cli 'https://ollama.com/download'
 - `ollama serve`
 - `ollama ps`
 - `ollama stop llama3.2`
