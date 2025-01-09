@@ -1,4 +1,4 @@
-# ollama-ts
+# ollama-next
 
 ### To operate teh background ollama server
 
