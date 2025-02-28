@@ -1,6 +1,7 @@
 import React from 'react';
 import {trpc} from "@/utils/trpc";
 import z from 'zod';
+import {getConfig} from "@/config";
 
 
 export const MessageZod = z.object({
@@ -15,7 +16,7 @@ export type Message = z.infer<typeof MessageZod>;
 
 export const useChat = () => {
   const [messages, setMessages] = React.useState<Message[]>([]);
-
+  const {model} = getConfig();
 
   const pushMessage = (message: Message) => {
     setMessages((prev) => [...prev, message]);
@@ -28,7 +29,7 @@ export const useChat = () => {
       onSuccess: (data: { message: string }) => {
         const responseMessage = data.message || '';
         if (responseMessage) {
-          pushMessage({role: 'the ai', content: responseMessage});
+          pushMessage({role: model, content: responseMessage});
         }
       }
     }
@@ -53,6 +54,6 @@ export const useChat = () => {
     messages,
     addMessage,
     clearMessages,
-    isFetching
+    isFetching,
   }
 }

@@ -2,6 +2,8 @@
 
 ### To operate the background ollama server
 
+![Alt text](./public/app-promo-image.png)
+
 ### install
 - install the ollama cli 'https://ollama.com/download'
 - `ollama pull llama3.2:latest`
@@ -11,7 +13,7 @@
 ### other useful commands
 - `ollama ps`
 - `ollama stop llama3.2`
-
+- 
 ### how it works
 
 - you install and run the ollama server

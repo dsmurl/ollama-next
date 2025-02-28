@@ -58,8 +58,7 @@ export const ChatBox: React.FC = () => {
       <div className="mt-4 space-y-2">
         {messages.map((message: Message, i: number) => (
           <div key={i} className="p-2 bg-gray-100 rounded text-black">
-            {`${message.role}: ${message.content}`}
-          </div>
+            <span className="font-bold uppercase">{message.role}</span>: {message.content}          </div>
         ))}
       </div>
     </div>
