@@ -1,13 +1,30 @@
 # ollama-next
 
-### To operate teh background ollama server
+### To operate the background ollama server
 
+### install
 - install the ollama cli 'https://ollama.com/download'
+- `ollama pull llama3.2:latest`
+- don't forget `pnpm install` and `pnpm run dev` for the ui
 - `ollama serve`
+
+### other useful commands
 - `ollama ps`
 - `ollama stop llama3.2`
 
-# Nextjs stuff
+### how it works
+
+- you install and run the ollama server
+- you pull the running model which the code desires
+  - see src/server/trpc/router.ts where the model is ran and queried
+  - there is a line which tells the server which model to use
+- run the ui with `pnpm run dev`
+- the ui is an interface to chat with the model
+- it "remembers" the last 7 or so things you asked about to simulate memory
+
+----------------------------
+
+# Common Nextjs stuff
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [
 `create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
