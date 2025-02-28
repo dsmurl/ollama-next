@@ -11,7 +11,7 @@
 ### other useful commands
 - `ollama ps`
 - `ollama stop llama3.2`
-- 
+
 ### how it works
 
 - you install and run the ollama server
