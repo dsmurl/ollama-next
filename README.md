@@ -1,7 +1,5 @@
 # ollama-next
 
-### To operate the background ollama server
-
 ![Alt text](./public/app-promo-image.png)
 
 ### install
