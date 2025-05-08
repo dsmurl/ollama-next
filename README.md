@@ -7,7 +7,7 @@
 - install the ollama cli 'https://ollama.com/download'
 - get the llama3.2 model
   - `ollama pull llama3.2:latest`
-- get the ollama run qwen2.5-coder:7b model
+- get the qwen2.5-coder:7b model
   - `ollama pull qwen2.5-coder:7b`
 - don't forget `pnpm install` and `pnpm run dev` for the ui
 - `ollama serve`
