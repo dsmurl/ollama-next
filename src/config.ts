@@ -1,5 +1,5 @@
 export const getConfig = () => {
   return {
-    model: 'llama3.2'
-  }
-}
+    model: "llama3.2",
+  };
+};

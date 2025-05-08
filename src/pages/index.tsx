@@ -1,5 +1,5 @@
-import {Geist, Geist_Mono} from "next/font/google";
-import {ChatBox} from "@/components/ChatBox";
+import { Geist, Geist_Mono } from "next/font/google";
+import { ChatBox } from "@/components/ChatBox";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,7 +17,7 @@ export default function Home() {
       className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[10px_1fr_20px] items-center justify-items-center min-h-screen p-4 sm:p-10 font-[family-name:var(--font-geist-sans)]`}
     >
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <ChatBox/>
+        <ChatBox />
       </main>
     </div>
   );

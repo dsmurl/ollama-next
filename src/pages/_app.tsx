@@ -1,10 +1,10 @@
 import "@/styles/globals.css";
-import {httpBatchLink} from '@trpc/client';
-import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
-import {trpc} from '@/utils/trpc';
-import type {AppType} from 'next/app';
+import { httpBatchLink } from "@trpc/client";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { trpc } from "@/utils/trpc";
+import type { AppType } from "next/app";
 
-const MyApp: AppType = ({Component, pageProps}) => {
+const MyApp: AppType = ({ Component, pageProps }) => {
   // Create a new QueryClient instance
   const queryClient = new QueryClient();
 
@@ -12,7 +12,7 @@ const MyApp: AppType = ({Component, pageProps}) => {
   const trpcClient = trpc.createClient({
     links: [
       httpBatchLink({
-        url: '/api/trpc',
+        url: "/api/trpc",
       }),
     ],
   });

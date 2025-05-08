@@ -1,26 +1,25 @@
-import React from 'react';
-import {Message, useChat} from "@/hooks/useChat";
-
+import React from "react";
+import { Message, useChat } from "@/hooks/useChat";
+import { formatMessageContent } from "@/utils/message-utils";
 
 export const ChatBox: React.FC = () => {
-  const [questionInput, setQuestionInput] = React.useState('');
-  const {isFetching, messages, chat, clearMessages} = useChat();
-
+  const [questionInput, setQuestionInput] = React.useState("");
+  const { isFetching, messages, chat, clearMessages } = useChat();
 
   const handleFormSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     const currentUserQuestion = questionInput.trim();
-    await setQuestionInput('');
-    chat({content: currentUserQuestion});
+    await setQuestionInput("");
+    chat({ content: currentUserQuestion });
   };
 
   const handleClearClick = async () => {
-    await clearMessages()
+    await clearMessages();
   };
 
   const onTextInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuestionInput(event.target.value);
-  }
+  };
 
   return (
     <div className="p-4 bg-white shadow-md rounded-lg min-w-[300px]">
@@ -40,9 +39,10 @@ export const ChatBox: React.FC = () => {
           >
             {isFetching ? (
               <div className="w-full flex justify-center items-center">
-                <div className="spinner"/>
-              </div>) : (
-              'Ask'
+                <div className="spinner" />
+              </div>
+            ) : (
+              "Ask"
             )}
           </button>
           <button
@@ -58,10 +58,11 @@ export const ChatBox: React.FC = () => {
       <div className="mt-4 space-y-2">
         {messages.map((message: Message, i: number) => (
           <div key={i} className="p-2 bg-gray-100 rounded text-black">
-            <span className="font-bold uppercase">{message.role}</span>: {message.content}          </div>
+            <span className="font-bold uppercase">{message.role}</span>:{" "}
+            <div>{formatMessageContent(message.content)}</div>
+          </div>
         ))}
       </div>
     </div>
   );
 };
-

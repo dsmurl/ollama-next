@@ -3,12 +3,14 @@
 ![Alt text](./public/app-promo-image.png)
 
 ### install
+
 - install the ollama cli 'https://ollama.com/download'
 - `ollama pull llama3.2:latest`
 - don't forget `pnpm install` and `pnpm run dev` for the ui
 - `ollama serve`
 
 ### other useful commands
+
 - `ollama ps`
 - `ollama stop llama3.2`
 
@@ -22,7 +24,7 @@
 - the ui is an interface to chat with the model
 - it "remembers" the last 7 or so things you asked about to simulate memory
 
-----------------------------
+---
 
 # Common Nextjs stuff
 
@@ -75,4 +77,3 @@ from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for
 more details.
-
