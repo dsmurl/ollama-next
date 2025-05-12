@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { z } from "zod";
 
 // types
-const models = ["llama3.2", "qwen2.5-coder:7b"] as const;
+const models = ["llama3.2:3b", "qwen2.5-coder:7b"] as const;
 export type ModelType = (typeof models)[number];
 export const ModelTypeZod = z.enum(models);
 
@@ -14,7 +14,7 @@ interface ModelStore {
 
 // Create a Zustand store
 const useModelStore = create<ModelStore>((set) => ({
-  currentModel: "llama3.2",
+  currentModel: "llama3.2:3b",
   setCurrentModel: (model: ModelType) => set({ currentModel: model }),
 }));
 

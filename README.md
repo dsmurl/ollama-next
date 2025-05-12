@@ -16,8 +16,8 @@
 
 - Install the ollama cli
   - at 'https://ollama.com/download'
-- Get the llama3.2 model
-  - `ollama pull llama3.2:latest`
+- Get the llama3.2:3b model
+  - `ollama pull llama3.2:3b`
 - Get the qwen2.5-coder:7b model
   - `ollama pull qwen2.5-coder:7b`
 - Run the ollama model server
@@ -29,8 +29,8 @@
 ### Other useful commands
 
 - `ollama ps`
-- `ollama run llama3.2`
-- `ollama stop llama3.2`
+- `ollama run llama3.2:3b`
+- `ollama stop llama3.2:3b`
 
 ### How it works
 
