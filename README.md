@@ -37,7 +37,6 @@
 - you pull the running model which the code desires
   - see src/server/trpc/router.ts where the model is ran and queried
   - there is a line which tells the server which model to use
-- run the ui with `pnpm run dev`
 - the ui is an interface to chat with the model
 - it "remembers" the last 7 or so things you asked about to simulate memory
 
