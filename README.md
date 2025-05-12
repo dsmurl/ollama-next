@@ -12,30 +12,31 @@
   <img src="./public/app-promo-image-2.png" alt="Ask code questions" width="400" />
 </div>
 
-### install
+### Install
 
-- install the ollama cli
+- Install the ollama cli
   - at 'https://ollama.com/download'
-- get the llama3.2 model
+- Get the llama3.2 model
   - `ollama pull llama3.2:latest`
-- get the qwen2.5-coder:7b model
+- Get the qwen2.5-coder:7b model
   - `ollama pull qwen2.5-coder:7b`
-- run the ollama model server
+- Run the ollama model server
   - `ollama serve`
-- run the ollama-next model ui
+- Run the ollama-next model ui
   - `pnpm install`
   - `pnpm run dev`
 
-### other useful commands
+### Other useful commands
 
 - `ollama ps`
+- `ollama run llama3.2`
 - `ollama stop llama3.2`
 
-### how it works
+### How it works
 
-- you install and run the ollama server
-- you pull the running model which the code desires
-  - see src/server/trpc/router.ts where the model is ran and queried
-  - there is a line which tells the server which model to use
-- the ui is an interface to chat with the model
-- it "remembers" the last 7 or so things you asked about to simulate memory
+- You install and run the ollama server
+- You pull the running model which the code desires
+  - See src/server/trpc/router.ts where the model is ran and queried
+  - There is a line which tells the server which model to use
+- The ui is an interface to chat with the model
+- It "remembers" the last 7 or so things you asked about to simulate memory
