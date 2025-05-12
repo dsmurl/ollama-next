@@ -1,6 +1,10 @@
 # ollama-next
 
-![Alt text](./public/app-promo-image.png)
+### Talk to it with a chat model
+![Talk to it](./public/app-promo-image-1.png)
+
+### Ask it code questions with a code model
+![Ask code questions](./public/app-promo-image-2.png)
 
 ### install
 
