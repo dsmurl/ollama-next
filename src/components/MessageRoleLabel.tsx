@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export type MessageRoleLabelProps = {
   role: string;
@@ -18,13 +19,13 @@ export const MessageRoleLabel: React.FC<MessageRoleLabelProps> = ({
 
   return (
     <div className={`flex items-center gap-2 ${className ?? ""}`}>
-      <img
+      <Image
         src={iconSrc}
         alt={isUser ? "User" : role || "Assistant"}
         width={iconSize}
         height={iconSize}
         className="rounded-sm"
-        loading="lazy"
+        priority={false}
       />
       <span className="font-bold uppercase">{role}</span>
     </div>
