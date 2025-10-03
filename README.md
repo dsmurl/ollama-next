@@ -20,6 +20,8 @@
   - `ollama pull llama3.2:3b`
 - Get the qwen2.5-coder:7b model
   - `ollama pull qwen2.5-coder:7b`
+- Get the qwen3-coder:30b [ if you have 32 to 64 gigs of VRam ]
+  - `ollama pull qwen3-coder:30b`
 - Run the ollama model server
   - `ollama serve`
 - Run the ollama-next model ui

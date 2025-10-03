@@ -1,6 +1,7 @@
 import React from "react";
 import { Message, useChat } from "@/hooks/useChat";
 import { formatMessageContent } from "@/utils/message-utils";
+import { MessageRoleLabel } from "@/components/MessageRoleLabel";
 
 export const ChatBox: React.FC = () => {
   const [questionInput, setQuestionInput] = React.useState("");
@@ -69,7 +70,7 @@ export const ChatBox: React.FC = () => {
         {messages.map((message: Message, i: number) => (
           <div key={i} className="p-2 bg-gray-100 rounded text-black">
             <div className="flex justify-between items-center mb-1">
-              <span className="font-bold uppercase">{message.role}</span>
+              <MessageRoleLabel role={message.role} iconSize={32} />
               {message.durationSeconds ? (
                 <span className="font-normal text-xs text-gray-500">
                   {message.durationSeconds}s
