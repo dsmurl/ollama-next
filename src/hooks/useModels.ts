@@ -2,7 +2,13 @@ import { create } from "zustand";
 import { z } from "zod";
 
 // types
-const models = ["llama3.2:3b", "qwen2.5-coder:7b", "qwen3-coder:30b"] as const;
+const models = [
+  "llama3.2:3b",
+  "qwen2.5-coder:7b",
+  "gemma3:27b",
+  "llama4:16x17b",
+  "qwen3-coder:30b",
+] as const;
 export type ModelType = (typeof models)[number];
 export const ModelTypeZod = z.enum(models);
 
