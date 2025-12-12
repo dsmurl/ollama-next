@@ -27,7 +27,9 @@ export const MessageRoleLabel: React.FC<MessageRoleLabelProps> = ({
         className="rounded-sm"
         priority={false}
       />
-      <span className="font-bold uppercase">{role}</span>
+      <span className="font-bold uppercase text-black dark:text-white">
+        {role}
+      </span>
     </div>
   );
 };

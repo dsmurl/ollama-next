@@ -1,8 +1,10 @@
+import type { AppType } from "next/app";
 import "@/styles/globals.css";
 import { httpBatchLink } from "@trpc/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { trpc } from "@/utils/trpc";
-import type { AppType } from "next/app";
+import { ThemeProvider } from "@/hooks/useTheme";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   // Create a new QueryClient instance
@@ -18,11 +20,14 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   });
 
   return (
-    <trpc.Provider client={trpcClient} queryClient={queryClient}>
-      <QueryClientProvider client={queryClient}>
-        <Component {...pageProps} />
-      </QueryClientProvider>
-    </trpc.Provider>
+    <ThemeProvider>
+      <trpc.Provider client={trpcClient} queryClient={queryClient}>
+        <QueryClientProvider client={queryClient}>
+          <Component {...pageProps} />
+          <ThemeToggle />
+        </QueryClientProvider>
+      </trpc.Provider>
+    </ThemeProvider>
   );
 };
 

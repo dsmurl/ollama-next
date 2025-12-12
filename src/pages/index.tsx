@@ -22,14 +22,14 @@ export default function Home() {
 
   return (
     <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[10px_1fr_20px] items-center justify-items-center min-h-screen p-4 sm:p-10 font-[family-name:var(--font-geist-sans)] relative`}
+      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[10px_1fr_20px] items-center justify-items-center min-h-screen p-4 sm:p-10 font-[family-name:var(--font-geist-sans)] relative bg-white dark:bg-gray-900 text-black dark:text-white`}
     >
       {/* Model Selection Dropdown - Positioned in top right */}
       <div className="fixed top-4 right-4 z-10">
         <select
           value={currentModel}
           onChange={handleModelChange}
-          className="p-2 border border-gray-300 rounded text-black bg-white shadow-md"
+          className="p-2 border border-gray-300 dark:border-gray-600 rounded text-black dark:text-white bg-white dark:bg-gray-800 shadow-md"
         >
           {getModelList().map((modelOption) => (
             <option key={modelOption} value={modelOption}>
