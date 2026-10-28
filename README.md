@@ -16,12 +16,16 @@
 
 - Install the ollama cli
   - at 'https://ollama.com/download'
-- Get the llama3.2:3b model
-  - `ollama pull llama3.2:3b`
-- Get the qwen2.5-coder:7b model
-  - `ollama pull qwen2.5-coder:7b`
-- Get the qwen3-coder:30b [ if you have 32 to 64 gigs of VRam ]
-  - `ollama pull qwen3-coder:30b`
+- Pull at least one of the models in the dropdown. You only need the ones you
+  plan to select; the app does not download anything for you.
+  - Chat models
+    - `ollama pull qwen3.5:4b` [ ~3.4 GB, the default selection ]
+    - `ollama pull qwen3.5:4b-mlx` [ ~4.0 GB, Apple-silicon MLX build ]
+    - `ollama pull gemma4:26b-mlx` [ ~18 GB, needs 24+ gigs of VRam ]
+    - `ollama pull qwen3.8:27b-mlx` [ ~18 GB, needs 24+ gigs of VRam ]
+  - Code models
+    - `ollama pull qwen2.5-coder:7b` [ ~4.7 GB ]
+    - `ollama pull qwen3-coder-next:latest` [ ~51 GB, needs 64+ gigs of VRam ]
 - Run the ollama model server
   - `ollama serve`
 - Run the ollama-next model ui
@@ -30,15 +34,18 @@
 
 ### Other useful commands
 
-- `ollama ps`
-- `ollama run llama3.2:3b`
-- `ollama stop llama3.2:3b`
+- `ollama list` - see which models you have pulled
+- `ollama ps` - see which models are currently loaded in memory
+- `ollama run qwen3.5:4b`
+- `ollama stop qwen3.5:4b`
 
 ### How it works
 
 - You install and run the ollama server
-- You pull the running model which the code desires
-  - See src/server/trpc/router.ts where the model is ran and queried
-  - There is a line which tells the server which model to use
+- You pull the models you want to use
+  - The dropdown in the top right picks which one each request goes to
+  - The selectable list lives in src/hooks/useModels.ts - keep it in sync with
+    your own `ollama list`
+  - See src/server/trpc/router.ts where the selected model is ran and queried
 - The ui is an interface to chat with the model
 - It "remembers" the last 7 or so things you asked about to simulate memory

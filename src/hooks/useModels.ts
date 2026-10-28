@@ -3,11 +3,12 @@ import { z } from "zod";
 
 // types
 const models = [
-  "llama3.2:3b",
+  "qwen3.5:4b",
+  "qwen3.5:4b-mlx",
+  "gemma4:26b-mlx",
+  "qwen3.8:27b-mlx",
   "qwen2.5-coder:7b",
-  "gemma3:27b",
-  "llama4:16x17b",
-  "qwen3-coder:30b",
+  "qwen3-coder-next:latest",
 ] as const;
 export type ModelType = (typeof models)[number];
 export const ModelTypeZod = z.enum(models);
@@ -20,7 +21,7 @@ interface ModelStore {
 
 // Create a Zustand store
 const useModelStore = create<ModelStore>((set) => ({
-  currentModel: "llama3.2:3b",
+  currentModel: "qwen3.5:4b",
   setCurrentModel: (model: ModelType) => set({ currentModel: model }),
 }));
 
